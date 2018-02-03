@@ -1,0 +1,7 @@
+**/obj
+**/bin
+.DS_Store
+*.userprefs
+nuget
+tools/*
+!tools/packages.config
