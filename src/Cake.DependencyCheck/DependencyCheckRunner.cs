@@ -30,7 +30,7 @@ namespace Cake.DependencyCheck
         {
             if (_environment.Platform.IsUnix())
             {
-                return new[] { "bindependency-check.sh", "dependency-check" };
+                return new[] { "dependency-check.sh", "dependency-check" };
             }
             else
             {
