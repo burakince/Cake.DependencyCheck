@@ -2,6 +2,9 @@
 
 OWASP DependencyCheck Cake Package
 
+[![Build status](https://ci.appveyor.com/api/projects/status/vs3rphe2768u1pwa?svg=true)](https://ci.appveyor.com/project/burakince/cake-dependencycheck) 
+
+
 Example usage;
 
 ```csharp
@@ -12,7 +15,6 @@ Example usage;
 Task("Dependency-Check")
     .Does(() =>
     {
-
         DependencyCheck(new DependencyCheckSettings
         {
             Project = "CustomerService",
