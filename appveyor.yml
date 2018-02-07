@@ -1,4 +1,5 @@
 version: 1.0.{build}
+image: Visual Studio 2017
 environment:
   NUGET_API_KEY:
     secure: Gh710okfD06O3QGAaOWY1gvL/FjnBLUgJHsMxY0qrud2CiF3V+sYFNdYDAXak8YR
