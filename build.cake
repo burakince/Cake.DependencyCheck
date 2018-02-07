@@ -12,7 +12,7 @@ var isPullRequest = AppVeyor.Environment.PullRequest.IsPullRequest;
 var apiKey = EnvironmentVariable("NUGET_API_KEY") ?? "abcdef0123456789";
 var buildNumber = EnvironmentVariable("APPVEYOR_BUILD_NUMBER") ?? "0";
 
-var version = "1.0.0";
+var version = "1.1.0";
 
 Setup(context =>
 {
@@ -69,6 +69,16 @@ Task("Pack")
                 {
                     Source = "netstandard1.6/Cake.DependencyCheck.dll",
                     Target = "lib/netstandard1.6"
+                },
+                new NuSpecContent
+                {
+                    Source = "net45/Cake.DependencyCheck.dll",
+                    Target = "lib/net45"
+                },
+                new NuSpecContent
+                {
+                    Source = "net46/Cake.DependencyCheck.dll",
+                    Target = "lib/net46"
                 }
             },
             BasePath = "./src/Cake.DependencyCheck/bin/release",

@@ -2,6 +2,7 @@
 **/bin
 .DS_Store
 *.userprefs
+.vscode
 nuget
 tools/*
 !tools/packages.config

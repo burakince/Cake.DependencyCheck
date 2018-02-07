@@ -1,11 +1,14 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3AB89DFD-7B2D-4BBC-9DEF-26A01A6ED8C4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{43240CBF-C1A7-43BF-AAB2-DC7565EC2C5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.DependencyCheck", "src\Cake.DependencyCheck\Cake.DependencyCheck.csproj", "{0BCA4FEC-7E25-4527-8DE3-684374A354FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.DependencyCheck", "src\Cake.DependencyCheck\Cake.DependencyCheck.csproj", "{415023E7-B418-4F4B-9C4D-03D8184E4AF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{2E68C0E6-58B0-46AB-A93F-54354BE8F3C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.DependencyCheck.Test", "test\Cake.DependencyCheck.Test\Cake.DependencyCheck.Test.csproj", "{15259E57-BEDE-47D8-B3E0-15017BDD6EAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,20 +23,33 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0BCA4FEC-7E25-4527-8DE3-684374A354FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BCA4FEC-7E25-4527-8DE3-684374A354FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BCA4FEC-7E25-4527-8DE3-684374A354FC}.Debug|x64.ActiveCfg = Debug|x64
-		{0BCA4FEC-7E25-4527-8DE3-684374A354FC}.Debug|x64.Build.0 = Debug|x64
-		{0BCA4FEC-7E25-4527-8DE3-684374A354FC}.Debug|x86.ActiveCfg = Debug|x86
-		{0BCA4FEC-7E25-4527-8DE3-684374A354FC}.Debug|x86.Build.0 = Debug|x86
-		{0BCA4FEC-7E25-4527-8DE3-684374A354FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BCA4FEC-7E25-4527-8DE3-684374A354FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BCA4FEC-7E25-4527-8DE3-684374A354FC}.Release|x64.ActiveCfg = Release|x64
-		{0BCA4FEC-7E25-4527-8DE3-684374A354FC}.Release|x64.Build.0 = Release|x64
-		{0BCA4FEC-7E25-4527-8DE3-684374A354FC}.Release|x86.ActiveCfg = Release|x86
-		{0BCA4FEC-7E25-4527-8DE3-684374A354FC}.Release|x86.Build.0 = Release|x86
+		{415023E7-B418-4F4B-9C4D-03D8184E4AF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415023E7-B418-4F4B-9C4D-03D8184E4AF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415023E7-B418-4F4B-9C4D-03D8184E4AF0}.Debug|x64.ActiveCfg = Debug|x64
+		{415023E7-B418-4F4B-9C4D-03D8184E4AF0}.Debug|x64.Build.0 = Debug|x64
+		{415023E7-B418-4F4B-9C4D-03D8184E4AF0}.Debug|x86.ActiveCfg = Debug|x86
+		{415023E7-B418-4F4B-9C4D-03D8184E4AF0}.Debug|x86.Build.0 = Debug|x86
+		{415023E7-B418-4F4B-9C4D-03D8184E4AF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415023E7-B418-4F4B-9C4D-03D8184E4AF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415023E7-B418-4F4B-9C4D-03D8184E4AF0}.Release|x64.ActiveCfg = Release|x64
+		{415023E7-B418-4F4B-9C4D-03D8184E4AF0}.Release|x64.Build.0 = Release|x64
+		{415023E7-B418-4F4B-9C4D-03D8184E4AF0}.Release|x86.ActiveCfg = Release|x86
+		{415023E7-B418-4F4B-9C4D-03D8184E4AF0}.Release|x86.Build.0 = Release|x86
+		{15259E57-BEDE-47D8-B3E0-15017BDD6EAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15259E57-BEDE-47D8-B3E0-15017BDD6EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15259E57-BEDE-47D8-B3E0-15017BDD6EAD}.Debug|x64.ActiveCfg = Debug|x64
+		{15259E57-BEDE-47D8-B3E0-15017BDD6EAD}.Debug|x64.Build.0 = Debug|x64
+		{15259E57-BEDE-47D8-B3E0-15017BDD6EAD}.Debug|x86.ActiveCfg = Debug|x86
+		{15259E57-BEDE-47D8-B3E0-15017BDD6EAD}.Debug|x86.Build.0 = Debug|x86
+		{15259E57-BEDE-47D8-B3E0-15017BDD6EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15259E57-BEDE-47D8-B3E0-15017BDD6EAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15259E57-BEDE-47D8-B3E0-15017BDD6EAD}.Release|x64.ActiveCfg = Release|x64
+		{15259E57-BEDE-47D8-B3E0-15017BDD6EAD}.Release|x64.Build.0 = Release|x64
+		{15259E57-BEDE-47D8-B3E0-15017BDD6EAD}.Release|x86.ActiveCfg = Release|x86
+		{15259E57-BEDE-47D8-B3E0-15017BDD6EAD}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{0BCA4FEC-7E25-4527-8DE3-684374A354FC} = {3AB89DFD-7B2D-4BBC-9DEF-26A01A6ED8C4}
+		{415023E7-B418-4F4B-9C4D-03D8184E4AF0} = {43240CBF-C1A7-43BF-AAB2-DC7565EC2C5E}
+		{15259E57-BEDE-47D8-B3E0-15017BDD6EAD} = {2E68C0E6-58B0-46AB-A93F-54354BE8F3C8}
 	EndGlobalSection
 EndGlobal

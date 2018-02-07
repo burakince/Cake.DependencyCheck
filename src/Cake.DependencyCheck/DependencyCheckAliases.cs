@@ -46,6 +46,35 @@ namespace Cake.DependencyCheck
         /// <code>
         /// Task("Dependency-Check")
         ///    .Does(() => {
+        ///       DependencyCheck(project: "ExampleProjectName", scan: "source/directory/*");
+        ///   });
+        /// </code>
+        /// </example>
+        /// <param name="context"></param>
+        /// <param name="project">A required project name.</param>
+        /// <param name="scan">A required scan path.</param>
+        [CakeMethodAlias]
+        public static void DependencyCheck(this ICakeContext context, string project, string scan)
+        {
+            if (string.IsNullOrEmpty(project))
+            {
+                throw new ArgumentNullException(nameof(project));
+            }
+            if (string.IsNullOrEmpty(scan))
+            {
+                throw new ArgumentNullException(nameof(scan));
+            }
+
+            DependencyCheck(context, settings: new DependencyCheckSettings(project, scan));
+        }
+
+        /// <summary>
+        /// Run the actual OWASP Dependency Check analysis.
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// Task("Dependency-Check")
+        ///    .Does(() => {
         ///       DependencyCheck(new DependencyCheckSettings
         ///       {
         ///          Project = "ExampleProjectName",
