@@ -1,5 +1,4 @@
 #tool "nuget:?package=DependencyCheck.Runner.Tool&include=./**/dependency-check.sh&include=./**/dependency-check.bat"
-#addin "Cake.Git"
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
@@ -7,12 +6,10 @@ var configuration = Argument("configuration", "Release");
 var solution = "Cake.DependencyCheck.sln";
 var appName = "Cake.DependencyCheck";
 
-var isPullRequest = AppVeyor.Environment.PullRequest.IsPullRequest;
-
 var apiKey = EnvironmentVariable("NUGET_API_KEY") ?? "abcdef0123456789";
 var buildNumber = EnvironmentVariable("APPVEYOR_BUILD_NUMBER") ?? "0";
 
-var version = "1.1.0";
+var version = EnvironmentVariable("APPVEYOR_REPO_TAG_NAME") ?? "1.1.0";
 
 Setup(context =>
 {
@@ -102,7 +99,6 @@ Task("Update-Appveyor-Build-Version")
     });
 
 Task("Publish")
-    .WithCriteria(() => !isPullRequest)
     .Does(() =>
     {
         if (string.IsNullOrEmpty(apiKey))
