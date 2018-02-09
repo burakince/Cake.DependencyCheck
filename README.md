@@ -1,6 +1,6 @@
 # Cake.DependencyCheck
 
-OWASP DependencyCheck Cake Package
+OWASP DependencyCheck Cake Package. You need to use [DependencyCheck Runner Tool](https://github.com/burakince/DependencyCheck.Runner.Tool).
 
 [![Build status](https://ci.appveyor.com/api/projects/status/vs3rphe2768u1pwa?svg=true)](https://ci.appveyor.com/project/burakince/cake-dependencycheck) 
 [![NuGet version](https://img.shields.io/nuget/v/Cake.DependencyCheck.svg)](https://www.nuget.org/packages/Cake.DependencyCheck/) 
