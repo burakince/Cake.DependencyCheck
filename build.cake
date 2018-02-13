@@ -9,7 +9,7 @@ var appName = "Cake.DependencyCheck";
 var apiKey = EnvironmentVariable("NUGET_API_KEY") ?? "abcdef0123456789";
 var buildNumber = EnvironmentVariable("APPVEYOR_BUILD_NUMBER") ?? "0";
 
-var version = EnvironmentVariable("APPVEYOR_REPO_TAG_NAME") ?? "1.1.0";
+var version = EnvironmentVariable("APPVEYOR_REPO_TAG_NAME") ?? "1.2.0";
 
 Setup(context =>
 {

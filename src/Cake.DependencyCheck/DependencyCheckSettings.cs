@@ -1,5 +1,4 @@
-﻿using Cake.DependencyCheck.Attributes;
-using Cake.Core.Tooling;
+﻿using Cake.Core.Tooling;
 
 namespace Cake.DependencyCheck
 {
@@ -71,7 +70,7 @@ namespace Cake.DependencyCheck
         /// <summary>
         /// Disables the automatic updating of the CPE data.
         /// </summary>
-        [Flag("--noupdate")]
+        [Argument("--noupdate", hasValue: false)]
         public bool Noupdate { get; set; }
 
         /// <summary>
@@ -83,19 +82,19 @@ namespace Cake.DependencyCheck
         /// <summary>
         /// Print the help message.
         /// </summary>
-        [Flag("--help")]
+        [Argument("--help", hasValue: false)]
         public bool Help { get; set; }
 
         /// <summary>
         /// Print the advanced help message.
         /// </summary>
-        [Flag("--advancedHelp")]
+        [Argument("--advancedHelp", hasValue: false)]
         public bool AdvancedHelp { get; set; }
 
         /// <summary>
         /// Print the runner version information.
         /// </summary>
-        [Flag("--version")]
+        [Argument("--version", hasValue: false)]
         public bool Version { get; set; }
 
         /// <summary>
@@ -107,13 +106,13 @@ namespace Cake.DependencyCheck
         /// <summary>
         /// Enable the experimental analyzers. If not set the analyzers marked as experimental below will not be loaded or used.
         /// </summary>
-        [Flag("--enableExperimental")]
+        [Argument("--enableExperimental", hasValue: false)]
         public bool EnableExperimental { get; set; }
 
         /// <summary>
         /// Enable the retired analyzers. If not set the analyzers marked as retired below will not be loaded or used.
         /// </summary>
-        [Flag("--enableRetired")]
+        [Argument("--enableRetired", hasValue: false)]
         public bool EnableRetired { get; set; }
 
         /// <summary>
@@ -149,79 +148,79 @@ namespace Cake.DependencyCheck
         /// <summary>
         /// If set only the update phase of dependency-check will be executed; no scan will be executed and no report will be generated.
         /// </summary>
-        [Flag("--updateonly")]
+        [Argument("--updateonly", hasValue: false)]
         public bool Updateonly { get; set; }
 
         /// <summary>
         /// Sets whether the experimental Python Distribution Analyzer will be used.
         /// </summary>
-        [Flag("--disablePyDist")]
+        [Argument("--disablePyDist", hasValue: false)]
         public bool DisablePyDist { get; set; }
 
         /// <summary>
         /// Sets whether the experimental Python Package Analyzer will be used.
         /// </summary>
-        [Flag("--disablePyPkg")]
+        [Argument("--disablePyPkg", hasValue: false)]
         public bool DisablePyPkg { get; set; }
 
         /// <summary>
         /// Sets whether the retired Node.js Package Analyzer will be used.
         /// </summary>
-        [Flag("--disableNodeJS")]
+        [Argument("--disableNodeJS", hasValue: false)]
         public bool DisableNodeJS { get; set; }
 
         /// <summary>
         /// Sets whether the NSP Analyzer will be used.
         /// </summary>
-        [Flag("--disableNSP")]
+        [Argument("--disableNSP", hasValue: false)]
         public bool DisableNSP { get; set; }
 
         /// <summary>
         /// Sets whether the experimental Ruby Gemspec Analyzer will be used.
         /// </summary>
-        [Flag("--disableRubygems")]
+        [Argument("--disableRubygems", hasValue: false)]
         public bool DisableRubygems { get; set; }
 
         /// <summary>
         /// Sets whether the experimental Ruby Bundler Audit Analyzer will be used.
         /// </summary>
-        [Flag("--disableBundleAudit")]
+        [Argument("--disableBundleAudit", hasValue: false)]
         public bool DisableBundleAudit { get; set; }
 
         /// <summary>
         /// Sets whether the experimental Cocoapods Analyzer will be used.
         /// </summary>
-        [Flag("--disableCocoapodsAnalyzer")]
+        [Argument("--disableCocoapodsAnalyzer", hasValue: false)]
         public bool DisableCocoapodsAnalyzer { get; set; }
 
         /// <summary>
         /// Sets whether the experimental Swift Package Manager Analyzer will be used.
         /// </summary>
-        [Flag("--disableSwiftPackageManagerAnalyzer")]
+        [Argument("--disableSwiftPackageManagerAnalyzer", hasValue: false)]
         public bool DisableSwiftPackageManagerAnalyzer { get; set; }
 
         /// <summary>
         /// Sets whether the experimental Autoconf Analyzer will be used.
         /// </summary>
-        [Flag("--disableAutoconf")]
+        [Argument("--disableAutoconf", hasValue: false)]
         public bool DisableAutoconf { get; set; }
 
         /// <summary>
         /// Sets whether the OpenSSL Analyzer will be used.
         /// </summary>
-        [Flag("--disableOpenSSL")]
+        [Argument("--disableOpenSSL", hasValue: false)]
         public bool DisableOpenSSL { get; set; }
 
         /// <summary>
         /// Sets whether the experimental Cmake Analyzer will be disabled.
         /// </summary>
-        [Flag("--disableCmake")]
+        [Argument("--disableCmake", hasValue: false)]
         public bool DisableCmake { get; set; }
 
         /// <summary>
         /// Sets whether the Archive Analyzer will be disabled.
         /// </summary>
-        [Flag("--disableArchive")]
+        [Argument("--disableArchive", hasValue: false)]
         public bool DisableArchive { get; set; }
 
         /// <summary>
@@ -233,25 +232,25 @@ namespace Cake.DependencyCheck
         /// <summary>
         /// Sets whether the Jar Analyzer will be disabled.
         /// </summary>
-        [Flag("--disableJar")]
+        [Argument("--disableJar", hasValue: false)]
         public bool DisableJar { get; set; }
 
         /// <summary>
         /// Sets whether the experimental PHP Composer Lock File Analyzer will be disabled.
         /// </summary>
-        [Flag("--disableComposer")]
+        [Argument("--disableComposer", hasValue: false)]
         public bool DisableComposer { get; set; }
 
         /// <summary>
         /// Sets whether the Central Analyzer will be used. Disabling this analyzer is not recommended as it could lead to false negatives (e.g. libraries that have vulnerabilities may not be reported correctly). If this analyzer is being disabled there is a good chance you also want to disable the Nexus Analyzer.
         /// </summary>
-        [Flag("--disableCentral")]
+        [Argument("--disableCentral", hasValue: false)]
         public bool DisableCentral { get; set; }
 
         /// <summary>
         /// Sets whether the Nexus Analyzer will be used (requires Nexus Pro). Note, this has been superceded by the Central Analyzer. However, you can configure the Nexus URL to utilize an internally hosted Nexus Pro server.
         /// </summary>
-        [Flag("--disableNexus")]
+        [Argument("--disableNexus", hasValue: false)]
         public bool DisableNexus { get; set; }
 
         /// <summary>
@@ -269,13 +268,13 @@ namespace Cake.DependencyCheck
         /// <summary>
         /// Sets whether or not the .NET Nuget Nuspec Analyzer will be used.
         /// </summary>
-        [Flag("--disableNuspec")]
+        [Argument("--disableNuspec", hasValue: false)]
         public bool DisableNuspec { get; set; }
 
         /// <summary>
         /// Sets whether or not the .NET Assembly Analyzer should be used.
         /// </summary>
-        [Flag("--disableAssembly")]
+        [Argument("--disableAssembly", hasValue: false)]
         public bool DisableAssembly { get; set; }
 
         /// <summary>
@@ -359,7 +358,7 @@ namespace Cake.DependencyCheck
         /// <summary>
         /// Delete the local copy of the NVD. This is used to force a refresh of the data.
         /// </summary>
-        [Flag("--purge")]
+        [Argument("--purge", hasValue: false)]
         public bool Purge { get; set; }
     }
 }

@@ -1,9 +1,5 @@
-using System;
 using Xunit;
-using Cake.DependencyCheck;
-using Cake.Core;
 using Cake.Core.IO;
-using Moq;
 
 namespace Cake.DependencyCheck.Test
 {

@@ -10,15 +10,6 @@
     <DefineConstants>NETSTANDARD1_6;</DefineConstants>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net46'">
-    <PackageReference Include="Cake.Common" Version="0.22.0">
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Cake.Core" Version="0.22.0">
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-
   <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
     <PackageReference Include="Cake.Common" Version="0.21.1">
       <PrivateAssets>all</PrivateAssets>
@@ -37,4 +28,7 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Attributes\FlagAttribute.cs" />
+  </ItemGroup>
 </Project>

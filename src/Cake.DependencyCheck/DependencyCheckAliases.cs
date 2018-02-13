@@ -12,7 +12,7 @@ namespace Cake.DependencyCheck
     /// In order to use the commands for this addin, include the following in your build.cake file to download and
     /// reference from NuGet.org:
     /// <code>
-    ///     #tool "nuget:?package=DependencyCheck.Runner.Tool&include=./**/dependency-check.sh&include=./**/dependency-check.bat"
+    ///     #tool "nuget:?package=DependencyCheck.Runner.Tool&amp;include=./**/dependency-check.sh&amp;include=./**/dependency-check.bat"
     ///     #addin "nuget:?package=Cake.DependencyCheck"
     /// </code>
     /// </para>
@@ -22,7 +22,7 @@ namespace Cake.DependencyCheck
     /// Also Format can be (XML, HTML, CSV, JSON, VULN, ALL). The default is HTML.
     /// 
     /// <code>
-    /// #tool "nuget:?package=DependencyCheck.Runner.Tool&include=./**/dependency-check.sh&include=./**/dependency-check.bat"
+    /// #tool "nuget:?package=DependencyCheck.Runner.Tool&amp;include=./**/dependency-check.sh&amp;include=./**/dependency-check.bat"
     /// #addin "nuget:?package=Cake.DependencyCheck"
     /// 
     /// Task("Dependency-Check")
