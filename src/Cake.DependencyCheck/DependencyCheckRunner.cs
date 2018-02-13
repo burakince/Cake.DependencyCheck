@@ -5,6 +5,9 @@ using Cake.Core.Tooling;
 
 namespace Cake.DependencyCheck
 {
+    /// <summary>
+    /// Dependency Check runner class.
+    /// </summary>
     public class DependencyCheckRunner : Tool<DependencyCheckSettings>
     {
         private readonly IFileSystem _fileSystem;
@@ -13,6 +16,13 @@ namespace Cake.DependencyCheck
         private readonly IToolLocator _tools;
         private readonly ArgumentAppender _appender;
 
+        /// <summary>
+        /// Dependency Check runner.
+        /// </summary>
+        /// <param name="fileSystem">A required file system object.</param>
+        /// <param name="environment">A required cake environment object.</param>
+        /// <param name="processRunner">A required process runner object.</param>
+        /// <param name="tools">A required tool locator object.</param>
         public DependencyCheckRunner(
             IFileSystem fileSystem,
             ICakeEnvironment environment,
@@ -22,6 +32,14 @@ namespace Cake.DependencyCheck
         {
         }
 
+        /// <summary>
+        /// Dependency Check runner.
+        /// </summary>
+        /// <param name="fileSystem">A required file system object.</param>
+        /// <param name="environment">A required cake environment object.</param>
+        /// <param name="processRunner">A required process runner object.</param>
+        /// <param name="tools">A required tool locator object.</param>
+        /// <param name="appender">A required argument appender object.</param>
         public DependencyCheckRunner(
             IFileSystem fileSystem,
             ICakeEnvironment environment,
@@ -37,6 +55,9 @@ namespace Cake.DependencyCheck
             _appender = appender;
         }
 
+        /// <summary>
+        /// Dependency Check executable names
+        /// </summary>
         protected override IEnumerable<string> GetToolExecutableNames()
         {
             if (_environment.Platform.IsUnix())
@@ -49,11 +70,18 @@ namespace Cake.DependencyCheck
             }
         }
 
+        /// <summary>
+        /// Tool name
+        /// </summary>
         protected override string GetToolName()
         {
             return "DependencyCheck";
         }
 
+        /// <summary>
+        /// Runner method
+        /// </summary>
+        /// <param name="settings">A required settings object.</param>
         protected internal void RunDependencyCheck(DependencyCheckSettings settings)
         {
             var arguments = new ProcessArgumentBuilder();

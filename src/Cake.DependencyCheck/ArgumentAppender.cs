@@ -6,8 +6,16 @@ using System.Reflection;
 
 namespace Cake.DependencyCheck
 {
+    /// <summary>
+    /// Argument appender. This class searching all filled settings and append them.
+    /// </summary>
     public class ArgumentAppender
     {
+        /// <summary>
+        /// This method searching all filled settings and append them to arguments.
+        /// </summary>
+        /// <param name="settings">A required settings object.</param>
+        /// <param name="arguments">A required arguments object.</param>
         public void AppendArguments(DependencyCheckSettings settings, ProcessArgumentBuilder arguments)
         {
             foreach (var property in settings.GetType().GetProperties())
@@ -47,7 +55,7 @@ namespace Cake.DependencyCheck
 
         }
 
-        private static void appendString(ProcessArgumentBuilder arguments, string name, object value)
+        private void appendString(ProcessArgumentBuilder arguments, string name, object value)
         {
             var stringValue = value.ToString();
             if (!string.IsNullOrEmpty(stringValue))
@@ -56,7 +64,7 @@ namespace Cake.DependencyCheck
             }
         }
 
-        private static void appendBoolean(ProcessArgumentBuilder arguments, string name, object value)
+        private void appendBoolean(ProcessArgumentBuilder arguments, string name, object value)
         {
             var booleanValue = Convert.ToBoolean(value);
             if (booleanValue)

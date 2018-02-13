@@ -9,10 +9,16 @@ namespace Cake.DependencyCheck
     /// </summary>
     public class DependencyCheckSettings : ToolSettings
     {
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public DependencyCheckSettings()
         {
         }
 
+        /// <summary>
+        /// Parameterized constructor
+        /// </summary>
         public DependencyCheckSettings(string project, string scan)
         {
             Project = project;
