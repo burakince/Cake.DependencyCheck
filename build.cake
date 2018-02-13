@@ -41,6 +41,23 @@ Task("Build")
         });
     });
 
+Task("Test")
+    .Does(() =>
+    {
+        var testProjects = GetFiles("./test/**/*.csproj");
+        foreach (var testProject in testProjects)
+        {
+            var projectFile = MakeAbsolute(testProject).ToString();
+            var dotNetTestSettings = new DotNetCoreTestSettings
+            {
+                Configuration = configuration,
+                NoBuild = true
+            };
+
+            DotNetCoreTest(projectFile, dotNetTestSettings);
+        }
+    });
+
 Task("Pack")
     .Does(() =>
     {
@@ -119,6 +136,7 @@ Task("Default")
     .IsDependentOn("Clean")
     .IsDependentOn("Restore")
     .IsDependentOn("Build")
+    .IsDependentOn("Test")
     .IsDependentOn("Pack");
 
 Task("AppVeyor")
