@@ -114,6 +114,252 @@ namespace Cake.DependencyCheck
         /// Enable the retired analyzers. If not set the analyzers marked as retired below will not be loaded or used.
         /// </summary>
         [Flag("--enableRetired")]
-        public bool EnableRetired { get; set; }        
+        public bool EnableRetired { get; set; }
+
+        /// <summary>
+        /// URL for the modified CVE 1.2
+        /// </summary>
+        [Argument("--cveUrl12Modified")]
+        public string CveUrl12Modified { get; set; }
+
+        /// <summary>
+        /// URL for the modified CVE 2.0
+        /// </summary>
+        [Argument("--cveUrl20Modified")]
+        public string CveUrl20Modified { get; set; }
+
+        /// <summary>
+        /// Base URL for each year’s CVE 1.2, the %d will be replaced with the year
+        /// </summary>
+        [Argument("--cveUrl12Base")]
+        public string CveUrl12Base { get; set; }
+
+        /// <summary>
+        /// Base URL for each year’s CVE 2.0, the %d will be replaced with the year
+        /// </summary>
+        [Argument("--cveUrl20Base")]
+        public string CveUrl20Base { get; set; }
+
+        /// <summary>
+        /// Specifies a file that contains properties to use instead of applicaion defaults.
+        /// </summary>
+        [Argument("--propertyfile")]
+        public string Propertyfile { get; set; }
+
+        /// <summary>
+        /// If set only the update phase of dependency-check will be executed; no scan will be executed and no report will be generated.
+        /// </summary>
+        [Flag("--updateonly")]
+        public bool Updateonly { get; set; }
+
+        /// <summary>
+        /// Sets whether the experimental Python Distribution Analyzer will be used.
+        /// </summary>
+        [Flag("--disablePyDist")]
+        public bool DisablePyDist { get; set; }
+
+        /// <summary>
+        /// Sets whether the experimental Python Package Analyzer will be used.
+        /// </summary>
+        [Flag("--disablePyPkg")]
+        public bool DisablePyPkg { get; set; }
+
+        /// <summary>
+        /// Sets whether the retired Node.js Package Analyzer will be used.
+        /// </summary>
+        [Flag("--disableNodeJS")]
+        public bool DisableNodeJS { get; set; }
+
+        /// <summary>
+        /// Sets whether the NSP Analyzer will be used.
+        /// </summary>
+        [Flag("--disableNSP")]
+        public bool DisableNSP { get; set; }
+
+        /// <summary>
+        /// Sets whether the experimental Ruby Gemspec Analyzer will be used.
+        /// </summary>
+        [Flag("--disableRubygems")]
+        public bool DisableRubygems { get; set; }
+
+        /// <summary>
+        /// Sets whether the experimental Ruby Bundler Audit Analyzer will be used.
+        /// </summary>
+        [Flag("--disableBundleAudit")]
+        public bool DisableBundleAudit { get; set; }
+
+        /// <summary>
+        /// Sets whether the experimental Cocoapods Analyzer will be used.
+        /// </summary>
+        [Flag("--disableCocoapodsAnalyzer")]
+        public bool DisableCocoapodsAnalyzer { get; set; }
+
+        /// <summary>
+        /// Sets whether the experimental Swift Package Manager Analyzer will be used.
+        /// </summary>
+        [Flag("--disableSwiftPackageManagerAnalyzer")]
+        public bool DisableSwiftPackageManagerAnalyzer { get; set; }
+
+        /// <summary>
+        /// Sets whether the experimental Autoconf Analyzer will be used.
+        /// </summary>
+        [Flag("--disableAutoconf")]
+        public bool DisableAutoconf { get; set; }
+
+        /// <summary>
+        /// Sets whether the OpenSSL Analyzer will be used.
+        /// </summary>
+        [Flag("--disableOpenSSL")]
+        public bool DisableOpenSSL { get; set; }
+
+        /// <summary>
+        /// Sets whether the experimental Cmake Analyzer will be disabled.
+        /// </summary>
+        [Flag("--disableCmake")]
+        public bool DisableCmake { get; set; }
+
+        /// <summary>
+        /// Sets whether the Archive Analyzer will be disabled.
+        /// </summary>
+        [Flag("--disableArchive")]
+        public bool DisableArchive { get; set; }
+
+        /// <summary>
+        /// A comma-separated list of additional file extensions to be treated like a ZIP file, the contents will be extracted and analyzed.
+        /// </summary>
+        [Argument("--zipExtensions")]
+        public string ZipExtensions { get; set; }
+
+        /// <summary>
+        /// Sets whether the Jar Analyzer will be disabled.
+        /// </summary>
+        [Flag("--disableJar")]
+        public bool DisableJar { get; set; }
+
+        /// <summary>
+        /// Sets whether the experimental PHP Composer Lock File Analyzer will be disabled.
+        /// </summary>
+        [Flag("--disableComposer")]
+        public bool DisableComposer { get; set; }
+
+        /// <summary>
+        /// Sets whether the Central Analyzer will be used. Disabling this analyzer is not recommended as it could lead to false negatives (e.g. libraries that have vulnerabilities may not be reported correctly). If this analyzer is being disabled there is a good chance you also want to disable the Nexus Analyzer.
+        /// </summary>
+        [Flag("--disableCentral")]
+        public bool DisableCentral { get; set; }
+
+        /// <summary>
+        /// Sets whether the Nexus Analyzer will be used (requires Nexus Pro). Note, this has been superceded by the Central Analyzer. However, you can configure the Nexus URL to utilize an internally hosted Nexus Pro server.
+        /// </summary>
+        [Flag("--disableNexus")]
+        public bool DisableNexus { get; set; }
+
+        /// <summary>
+        /// The url to the Nexus Server’s web service end point (example: http://domain.enterprise/nexus/service/local/). If not set the Nexus Analyzer will be disabled.
+        /// </summary>
+        [Argument("--nexus")]
+        public string Nexus { get; set; }
+
+        /// <summary>
+        /// Whether or not the defined proxy should be used when connecting to Nexus.
+        /// </summary>
+        [Argument("--nexusUsesProxy")]
+        public string NexusUsesProxy { get; set; }
+
+        /// <summary>
+        /// Sets whether or not the .NET Nuget Nuspec Analyzer will be used.
+        /// </summary>
+        [Flag("--disableNuspec")]
+        public bool DisableNuspec { get; set; }
+
+        /// <summary>
+        /// Sets whether or not the .NET Assembly Analyzer should be used.
+        /// </summary>
+        [Flag("--disableAssembly")]
+        public bool DisableAssembly { get; set; }
+
+        /// <summary>
+        /// The path to Mono for .NET Assembly analysis on non-windows systems.
+        /// </summary>
+        [Argument("--mono")]
+        public string Mono { get; set; }
+
+        /// <summary>
+        /// The path to the bundle-audit executable.
+        /// </summary>
+        [Argument("--bundleAudit")]
+        public string BundleAudit { get; set; }
+
+        /// <summary>
+        /// The proxy server to use when downloading resources; see the proxy configuration page for more information.
+        /// </summary>
+        [Argument("--proxyserver")]
+        public string ProxyServer { get; set; }
+
+        /// <summary>
+        /// The proxy port to use when downloading resources.
+        /// </summary>
+        [Argument("--proxyport")]
+        public string ProxyPort { get; set; }
+
+        /// <summary>
+        /// The connection timeout (in milliseconds) to use when downloading resources.
+        /// </summary>
+        [Argument("--connectiontimeout")]
+        public string ConnectionTimeout { get; set; }
+
+        /// <summary>
+        /// The proxy password to use when downloading resources.
+        /// </summary>
+        [Argument("--proxypass")]
+        public string ProxyPassword { get; set; }
+
+        /// <summary>
+        /// The proxy username to use when downloading resources.
+        /// </summary>
+        [Argument("--proxyuser")]
+        public string ProxyUser { get; set; }
+
+        /// <summary>
+        /// The connection string to the database.
+        /// </summary>
+        [Argument("--connectionString")]
+        public string ConnectionString { get; set; }
+
+        /// <summary>
+        /// The database driver name.
+        /// </summary>
+        [Argument("--dbDriverName")]
+        public string DatabaseDriverName { get; set; }
+
+        /// <summary>
+        /// The path to the database driver; note, this does not need to be set unless the JAR is outside of the class path.
+        /// </summary>
+        [Argument("--dbDriverPath")]
+        public string DatabaseDriverPath { get; set; }
+
+        /// <summary>
+        /// The password for connecting to the database.
+        /// </summary>
+        [Argument("--dbPassword")]
+        public string DatabasePassword { get; set; }
+
+        /// <summary>
+        /// The username used to connect to the database.
+        /// </summary>
+        [Argument("--dbUser")]
+        public string DatabaseUser { get; set; }
+
+        /// <summary>
+        /// The location of the data directory used to store persistent data. This option should generally not be set.
+        /// </summary>
+        [Argument("--data")]
+        public string Data { get; set; }
+
+        /// <summary>
+        /// Delete the local copy of the NVD. This is used to force a refresh of the data.
+        /// </summary>
+        [Flag("--purge")]
+        public bool Purge { get; set; }
     }
 }
