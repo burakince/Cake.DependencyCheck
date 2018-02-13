@@ -86,12 +86,27 @@ Task("Pack")
                 },
                 new NuSpecContent
                 {
+                    Source = "netstandard1.6/Cake.DependencyCheck.xml",
+                    Target = "lib/netstandard1.6"
+                },
+                new NuSpecContent
+                {
                     Source = "net45/Cake.DependencyCheck.dll",
                     Target = "lib/net45"
                 },
                 new NuSpecContent
                 {
+                    Source = "net45/Cake.DependencyCheck.xml",
+                    Target = "lib/net45"
+                },
+                new NuSpecContent
+                {
                     Source = "net46/Cake.DependencyCheck.dll",
+                    Target = "lib/net46"
+                },
+                new NuSpecContent
+                {
+                    Source = "net46/Cake.DependencyCheck.xml",
                     Target = "lib/net46"
                 }
             },

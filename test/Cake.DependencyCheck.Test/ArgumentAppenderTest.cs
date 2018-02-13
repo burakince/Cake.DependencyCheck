@@ -6,11 +6,12 @@ namespace Cake.DependencyCheck.Test
     public class ArgumentAppenderTest
     {
         [Fact]
-        public void WhenHasArgumentShouldAddValueWithAttributeName()
+        public void WhenHasArgumentShouldAddAttributeNameWithValue()
         {
-            var settings = new DependencyCheckSettings();
-            settings.Project = "TestProject";
-
+            var settings = new DependencyCheckSettings
+            {
+                Project = "TestProject"
+            };
             var arguments = new ProcessArgumentBuilder();
 
             var appender = new ArgumentAppender();
@@ -20,17 +21,30 @@ namespace Cake.DependencyCheck.Test
         }
 
         [Fact]
-        public void WhenHasFlagShouldAddAttributeName()
+        public void WhenHasArgumentWithoutValueShouldAddAttributeName()
         {
-            var settings = new DependencyCheckSettings();
-            settings.Help = true;
-
+            var settings = new DependencyCheckSettings
+            {
+                Help = true
+            };
             var arguments = new ProcessArgumentBuilder();
 
             var appender = new ArgumentAppender();
             appender.AppendArguments(settings, arguments);
 
             Assert.Equal("--help", arguments.Render());
+        }
+
+        [Fact]
+        public void WhenHasNotArgumentShouldBlank()
+        {
+            var settings = new DependencyCheckSettings();
+            var arguments = new ProcessArgumentBuilder();
+
+            var appender = new ArgumentAppender();
+            appender.AppendArguments(settings, arguments);
+
+            Assert.Equal("", arguments.Render());
         }
     }
 }

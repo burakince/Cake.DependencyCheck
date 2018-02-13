@@ -18,5 +18,4 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Cake.DependencyCheck\Cake.DependencyCheck.csproj" />
   </ItemGroup>
-
 </Project>
