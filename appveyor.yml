@@ -1,9 +1,12 @@
 version: 1.0.{build}
+branches:
+  only:
+  - master
 skip_non_tags: true
 image: Visual Studio 2017
 environment:
   NUGET_API_KEY:
-    secure: Gh710okfD06O3QGAaOWY1gvL/FjnBLUgJHsMxY0qrud2CiF3V+sYFNdYDAXak8YR
+    secure: f2IDgAZcEyblpkHp0/QeMjoWhZJi1yPWHzBh0WQQApUb14qcABl0uYK5SpqErFVZ
 build_script:
 - cmd: powershell -NoProfile -ExecutionPolicy unrestricted -Command .\build.ps1 -Target "AppVeyor"
 test: off
