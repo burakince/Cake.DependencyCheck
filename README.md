@@ -1,5 +1,7 @@
 # Cake.DependencyCheck
 
+[![Join the chat at https://gitter.im/Cake-DependencyCheck/Lobby](https://badges.gitter.im/Cake-DependencyCheck/Lobby.svg)](https://gitter.im/Cake-DependencyCheck/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 OWASP DependencyCheck Cake Package. You need to use [DependencyCheck Runner Tool](https://github.com/burakince/DependencyCheck.Runner.Tool).
 
 [![Build status](https://ci.appveyor.com/api/projects/status/w4p88lcixif2erl9?svg=true)](https://ci.appveyor.com/project/burakince/cake-dependencycheck) 
