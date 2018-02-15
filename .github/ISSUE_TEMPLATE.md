@@ -1,6 +1,9 @@
 <!--
 BEFORE YOU SUBMIT AN ISSUE:
 
+DO NOT CREATE AN ISSUE FOR A QUESTION - questions are better served in chat, and can be later raised as an issue if required.
+-  chat - https://gitter.im/Cake-DependencyCheck/Lobby
+
 DELETE EVERYTHING IN THIS COMMENT BLOCK
 
 TEMPLATE FOR BUG REPORTS:
